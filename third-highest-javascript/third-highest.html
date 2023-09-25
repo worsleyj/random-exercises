@@ -14,7 +14,7 @@
     while (counter < 10) {
         input[counter] = parseInt(prompt("Please enter number " + (counter+1))) // prompts user to enter 10 numbers manually
         input.sort(function(a, b){return a - b}) // sorts array numerically
-        if (input[counter] > highest) { // if current number is higher than highest recorded, bump second highest down to third highest,
+        if (input[counter] > highest) {   // if current number is higher than highest recorded, bump second highest down to third highest,
             thirdHighest = secondHighest; // then bump highest down to second highest, then record the new highest.
             secondHighest = highest;
             highest = input[counter];
