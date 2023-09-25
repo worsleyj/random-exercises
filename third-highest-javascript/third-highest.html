@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>third highest number</title>
+</head>
+<body>
+    <script>
+    const input = [];
+    let counter = 0;
+    let highest = 0;
+    let secondHighest = 0;
+    let thirdHighest = 0;
+
+    while (counter < 10) {
+        input[counter] = parseInt(prompt("Please enter number " + (counter+1))) // prompts user to enter 10 numbers manually
+        input.sort(function(a, b){return a - b}) // sorts array numerically
+        if (input[counter] > highest) { // if current number is higher than highest recorded, bump second highest down to third highest,
+            thirdHighest = secondHighest; // then bump highest down to second highest, then record the new highest.
+            secondHighest = highest;
+            highest = input[counter];
+        }
+        counter++;
+    }
+    console.log(input)
+    console.log("The third highest number is: " + thirdHighest)
+    </script>
+</body>
+</html>
